@@ -1,0 +1,58 @@
+AllCops:
+  DisabledByDefault: true
+
+# Enforce that there are no `debugger` or `binding.pry`.
+Lint/Debugger:
+  Enabled: true
+
+# Enforce not duplicating methods.
+Lint/DuplicateMethods:
+  Enabled: true
+
+# Enforce not duplicating hash keys.
+Lint/DuplicatedKey:
+  Enabled: true
+
+# Ensure that we don't use `private` and `protected` on class methods, which doesn't work.
+Lint/IneffectiveAccessModifier:
+  Enabled: true
+
+# Ensure that custom errors do not inherit Exception. Instead, they should inherit StandardError.
+Lint/InheritException:
+  Enabled: true
+
+# Ensure that we don't rescue `Exception`, which will eat syntax errors.
+Lint/RescueException:
+  Enabled: true
+
+# Ensure that we don't have useless or redudant access modifiers (`private` or `protected`).
+Lint/UselessAccessModifier:
+  Enabled: true
+
+# Ensure that we're not assigning to variables that we're not using.
+Lint/UselessAssignment:
+  Enabled: true
+
+# Enforce not using `eval`.
+Security/Eval:
+  Enabled: true
+
+# Ensure that methods have an empty line between them.
+Style/EmptyLineBetweenDefs:
+  Enabled: true
+
+# Ensure that we don't have multiple newlines in a row.
+Style/EmptyLines:
+  Enabled: true
+
+# Ensure that access modifiers (`private` and `protected`) have empty lines around them.
+Style/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+# Ensure that there isn't extra newlines within method bodies.
+Style/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# Ensure that two spaces are used for indentation.
+Style/IndentationWidth:
+  Enabled: true
