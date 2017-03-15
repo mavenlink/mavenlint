@@ -1,0 +1,14 @@
+{
+  "name": "mavenlint",
+  "version": "1.0.0",
+  "description": "Mavenlink ESLint config",
+  "main": "index.js",
+  "repository": "https://github.com/mavenlink/mavenlint.git",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">= 3.7.0"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^10.0.1"
+  }
+}
