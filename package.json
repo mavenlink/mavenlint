@@ -1,5 +1,5 @@
 {
-  "name": "mavenlint",
+  "name": "eslint-config-mavenlint",
   "version": "1.0.0",
   "description": "Mavenlink ESLint config",
   "main": "index.js",
