@@ -17,17 +17,5 @@ module.exports = {
     'arrow-body-style': 'off',
     'func-names': 'off',
     'react/jsx-boolean-value': 'off',
-  },
-  env: {
-    browser: true,
-    node: true,
-    jasmine: true,
-  },
-  globals: {
-    _: true,
-    $: true,
-    Intercom: true,
-    Mavenlink: true,
-    moment: true,
-  },
+  }
 };
