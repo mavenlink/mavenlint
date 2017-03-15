@@ -1,0 +1,23 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+npm-debug.log
+
+# IDE
+.idea
+
+# Bundler config
+/.bundle
+
+# All logfiles and tempfiles
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Byebug command history file
+.byebug_history
