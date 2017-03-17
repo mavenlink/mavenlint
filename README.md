@@ -6,10 +6,8 @@ Mavenlink Ruby and Javascript linting rules.
 
 Install this package as a dev dependency.
 
-```json
-devDependencies: {
-  "mavenlint": ">= 1"
-}
+```bash
+yarn add https://github.com/mavenlink/mavenlint.git --dev
 ```
 
 Then, extend `mavenlint` in your `.eslintrc` file.
@@ -25,7 +23,7 @@ Then, extend `mavenlint` in your `.eslintrc` file.
 Add this gem to your Gemfile. For a Rails project, it may make sense to add it to the development group.
 
 ```rb
-gem "mavenlint", ">= 1.0.0"
+gem "mavenlint", git: "https://github.com/mavenlink/arboreal"
 ```
 
 Then, inherit from this gem in your `.rubocop.yml`.
