@@ -23,7 +23,7 @@ Then, extend `mavenlint` in your `.eslintrc` file.
 Add this gem to your Gemfile. For a Rails project, it may make sense to add it to the development group.
 
 ```rb
-gem "mavenlint", git: "https://github.com/mavenlink/arboreal"
+gem "mavenlint", git: "https://github.com/mavenlink/mavenlint"
 ```
 
 Then, inherit from this gem in your `.rubocop.yml`.
