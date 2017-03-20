@@ -7,7 +7,7 @@ Mavenlink Ruby and Javascript linting rules.
 Install this package as a dev dependency.
 
 ```bash
-yarn add https://github.com/mavenlink/mavenlint.git --dev
+yarn add eslint-config-mavenlink --dev
 ```
 
 Then, extend `mavenlint` in your `.eslintrc` file.
