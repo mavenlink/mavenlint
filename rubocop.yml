@@ -1,6 +1,9 @@
 AllCops:
   DisabledByDefault: true
 
+require:
+  - ./lib/rubocop-mavenlink
+
 # Enforce that there are no `debugger` or `binding.pry`.
 Lint/Debugger:
   Enabled: true
@@ -55,4 +58,8 @@ Style/EmptyLinesAroundMethodBody:
 
 # Ensure that two spaces are used for indentation.
 Style/IndentationWidth:
+  Enabled: true
+
+# Ensure not using Fixjour-style Factory invocations.
+Mavenlink/FixjourStyleFactories:
   Enabled: true
