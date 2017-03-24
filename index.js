@@ -16,5 +16,6 @@ module.exports = {
     'no-unused-expressions': ['error', { allowTernary: true }],
     'arrow-body-style': 'off',
     'func-names': 'off',
+    'react/jsx-boolean-value': 'off',
   }
 };
