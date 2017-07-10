@@ -11,7 +11,6 @@ module.exports = {
       ignoreComments: true,
       ignoreStrings: true,
     }],
-    'import/extensions': 'off',
     'import/no-commonjs': 'error',
     'eol-last': ['error', 'always'],
     'no-unused-expressions': ['error', { allowTernary: true }],
