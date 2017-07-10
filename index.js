@@ -17,6 +17,5 @@ module.exports = {
     'arrow-body-style': 'off',
     'func-names': 'off',
     'react/jsx-boolean-value': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
   }
 };
