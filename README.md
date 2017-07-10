@@ -2,6 +2,8 @@
 
 Mavenlink Ruby and Javascript linting rules.
 
+[![npm version](https://img.shields.io/npm/v/eslint-config-mavenlint.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-mavenlint)
+
 ## Javascript
 
 Install this package as a dev dependency.
