@@ -17,5 +17,6 @@ module.exports = {
     'arrow-body-style': 'off',
     'func-names': 'off',
     'react/jsx-boolean-value': 'off',
+    'no-multiple-empty-lines': ["error", { "max": 1 }],
   }
 };
