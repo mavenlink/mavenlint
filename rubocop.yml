@@ -38,21 +38,21 @@ Security/Eval:
   Enabled: true
 
 # Ensure that methods have an empty line between them.
-Style/EmptyLineBetweenDefs:
+Layout/EmptyLineBetweenDefs:
   Enabled: true
 
 # Ensure that we don't have multiple newlines in a row.
-Style/EmptyLines:
+Layout/EmptyLines:
   Enabled: true
 
 # Ensure that access modifiers (`private` and `protected`) have empty lines around them.
-Style/EmptyLinesAroundAccessModifier:
+Layout/EmptyLinesAroundAccessModifier:
   Enabled: true
 
 # Ensure that there isn't extra newlines within method bodies.
-Style/EmptyLinesAroundMethodBody:
+Layout/EmptyLinesAroundMethodBody:
   Enabled: true
 
 # Ensure that two spaces are used for indentation.
-Style/IndentationWidth:
+Layout/IndentationWidth:
   Enabled: true
