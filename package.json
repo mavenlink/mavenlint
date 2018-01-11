@@ -1,23 +1,12 @@
 {
-  "name": "eslint-config-mavenlint",
-  "version": "2.2.2",
-  "description": "Mavenlink ESLint config",
-  "main": "index.js",
-  "repository": "https://github.com/mavenlink/mavenlint.git",
-  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "publish-packages": "lerna publish"
+  },
   "devDependencies": {
-    "eslint": "^4.14.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.5.1"
-  },
-  "peerDependencies": {
-    "eslint": ">=4.14.0",
-    "eslint-plugin-import": ">=2.8.0",
-    "eslint-plugin-jsx-a11y": ">= 5.1.1",
-    "eslint-plugin-react": ">=7.5.1"
-  },
-  "dependencies": {
-    "eslint-config-airbnb": "15.1.0"
+    "lerna": "^2.6.0"
   }
 }
