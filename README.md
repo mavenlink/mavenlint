@@ -5,10 +5,10 @@ Mavenlink Ruby and Javascript linting rules.
 [![npm version](https://img.shields.io/npm/v/eslint-config-mavenlint.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-mavenlint)
 
 1. [Usage](#usage)
-  - [Javascript](#javascript)
-  - [Ruby](#ruby)
+   - [Javascript](#javascript)
+   - [Ruby](#ruby)
 2. [Developing](#developing)
-  - [ESLint packages](#eslint-packages)
+   - [ESLint packages](#eslint-packages)
 
 ## Usage
 
