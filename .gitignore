@@ -21,3 +21,6 @@ npm-debug.log
 
 # Byebug command history file
 .byebug_history
+
+# Yarn error files
+yarn-error.log
