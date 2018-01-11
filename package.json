@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "publish": "./node_modules/lerna/bin/lerna.js publish"
+    "publish-packages": "./node_modules/lerna/bin/lerna.js publish"
   },
   "devDependencies": {
     "lerna": "^2.6.0"

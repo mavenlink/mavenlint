@@ -64,7 +64,7 @@ yarn install
 To publish changed packages, run:
 
 ```
-yarn publish
+yarn publish-packages
 ```
 
 You will then be prompted to select new versions for each changed package. Commits and tags will be generated for each and their version numbers will be updated.
