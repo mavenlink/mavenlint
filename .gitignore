@@ -18,9 +18,7 @@ npm-debug.log
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+*.log
 
 # Byebug command history file
 .byebug_history
-
-# Yarn error files
-yarn-error.log
