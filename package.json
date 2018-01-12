@@ -7,6 +7,6 @@
     "publish-packages": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^2.6.0"
+    "lerna": "^2.7.0"
   }
 }
