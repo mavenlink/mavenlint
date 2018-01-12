@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-mavenlint",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.1",
   "description": "Custom lint rules for Mavenlink",
   "main": "index.js",
   "repository": "https://github.com/mavenlink/mavenlint.git",
