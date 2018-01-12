@@ -4,9 +4,11 @@
     "packages/*"
   ],
   "scripts": {
-    "publish-packages": "lerna publish"
+    "publish-packages": "lerna publish",
+    "test": "jest"
   },
   "devDependencies": {
+    "jest": "^22.0.6",
     "lerna": "^2.7.0"
   }
 }
