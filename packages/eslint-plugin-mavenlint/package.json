@@ -1,0 +1,14 @@
+{
+  "name": "eslint-plugin-mavenlint",
+  "version": "0.0.1",
+  "description": "Custom lint rules for Mavenlink",
+  "main": "index.js",
+  "repository": "https://github.com/mavenlink/mavenlint.git",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.14.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=4.14.0"
+  }
+}
