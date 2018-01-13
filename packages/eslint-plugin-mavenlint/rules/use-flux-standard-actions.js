@@ -19,7 +19,7 @@ module.exports = {
         const statement = node.argument;
         if (statement.type !== 'ObjectExpression') { return; }
 
-        // Does this Object have a `type` property. If so, infer that this is an action.
+        // Does this Object have a `type` property? If so, infer that this is an action.
         const properties = statement.properties;
         const keys = properties.map(property => property.key.name);
         if (!keys.includes('type')) { return; }

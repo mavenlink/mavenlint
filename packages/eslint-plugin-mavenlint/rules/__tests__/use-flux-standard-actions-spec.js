@@ -15,7 +15,7 @@ ruleTester.run('use-flux-standard-actions', rule, {
       code: 'function test() { return { type: "FOO", data: "BAR" }; }',
       filename: 'lib/selectors/foo.js',
     },
-    // Non-compliant action doesn't even have a type property.
+    // Non-compliant action which doesn't even have a type property.
     {
       code: 'function test() { return { data: "BAR" }; }',
       filename: 'lib/action-creators/foo.js',
