@@ -1,5 +1,6 @@
 module.exports = {
   extends: 'airbnb',
+  plugins: ['mavenlint'],
   rules: {
     'import/no-extraneous-dependencies': [
       'off',
@@ -19,5 +20,6 @@ module.exports = {
     'react/jsx-boolean-value': 'off',
     'no-console': 'error',
     'no-multiple-empty-lines': ["error", { "max": 1 }],
+    'mavenlint/use-flux-standard-actions': 'error',
   }
 };
