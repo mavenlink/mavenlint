@@ -49,7 +49,7 @@ inherit_gem:
 
 ### ESLint packages
 
-For our NPM packages, we use [yarn workspaces](https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/) to publish multiple packages. To develop, you'll need to turn workspaces on by running
+For our NPM packages, we use [yarn workspaces](https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/) to publish multiple packages. To develop, you'll need to turn workspaces on by running:
 
 ```
 yarn config set workspaces-experimental true
@@ -61,7 +61,13 @@ Then, to install dependencies for all packages, run the following from the root 
 yarn install
 ```
 
-To publish changed packages, run:
+To publish changed packages, first ensure that you are logged in:
+
+```
+yarn login
+```
+
+and then run:
 
 ```
 yarn publish-packages
