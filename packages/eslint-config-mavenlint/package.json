@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-mavenlint",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Mavenlink ESLint config",
   "main": "index.js",
   "repository": "https://github.com/mavenlink/mavenlint.git",
@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "eslint-config-airbnb": "15.1.0",
-    "eslint-plugin-mavenlint": "0.0.1"
+    "eslint-plugin-mavenlint": "^0.1.0"
   }
 }
