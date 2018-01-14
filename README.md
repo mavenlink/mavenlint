@@ -57,10 +57,16 @@ Install dependencies for all packages by running the following from the root of 
 yarn install
 ```
 
-To publish changed packages, run:
+To publish changed packages, first login to NPM:
+
+```
+npm login
+```
+
+and then run:
 
 ```
 yarn publish-packages
 ```
 
-You will then be prompted to select new versions for each changed package. Commits and tags will be generated for each and their version numbers will be updated.
+You will be prompted to select new versions for each changed package. Commits and tags will be generated for each and their version numbers will be updated.
