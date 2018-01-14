@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "publish-packages": "lerna publish",
+    "publish-packages": "lerna publish --npm-client=npm",
     "test": "jest"
   },
   "devDependencies": {
