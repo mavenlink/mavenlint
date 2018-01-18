@@ -64,7 +64,13 @@ To publish changed packages, first login to NPM:
 npm login
 ```
 
-and then run:
+To publish alpha versions for testing in other applications, run:
+
+```
+yarn publish-canary
+```
+
+To publish release versions, run:
 
 ```
 yarn publish-packages
