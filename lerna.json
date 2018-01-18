@@ -8,7 +8,7 @@
     }
   },
   "independent": true,
-  "lerna": "2.7.0",
+  "lerna": "2.7.1",
   "npmClient": "yarn",
   "packages": [
     "packages/*"
