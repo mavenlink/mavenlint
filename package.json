@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "publish-packages": "lerna publish --npm-client=npm --registry=https://registry.npmjs.org/",
+    "publish-packages": "lerna publish",
     "test": "jest"
   },
   "devDependencies": {
