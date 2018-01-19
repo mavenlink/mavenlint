@@ -21,5 +21,6 @@ module.exports = {
     'no-console': 'error',
     'no-multiple-empty-lines': ["error", { "max": 1 }],
     'mavenlint/use-flux-standard-actions': 'error',
+    'mavenlint/use-css-composition': 'error',
   }
 };

@@ -58,13 +58,19 @@ Install dependencies for all packages by running the following from the root of 
 yarn install
 ```
 
-To publish changed packages, first login to NPM:
+To publish changed packages, first login:
 
 ```
-npm login
+yarn login
 ```
 
-and then run:
+To publish alpha versions for testing in other applications, run:
+
+```
+yarn publish-canary
+```
+
+To publish release versions, run:
 
 ```
 yarn publish-packages

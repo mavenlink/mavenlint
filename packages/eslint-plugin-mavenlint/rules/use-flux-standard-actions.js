@@ -6,7 +6,6 @@ module.exports = {
       description: 'enforce using flux standard actions',
       category: 'Best Practices',
     },
-    schema: [],
   },
   create(context) {
     return {
