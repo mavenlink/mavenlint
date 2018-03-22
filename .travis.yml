@@ -1,7 +1,7 @@
 matrix:
   include:
     - language: node_js
-      node_is:
+      node_js:
         - "6"
 
     - language: ruby
