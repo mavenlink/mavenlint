@@ -1,12 +1,12 @@
 matrix:
   include:
     - language: node_js
-    node_is:
-      - "6"
+      node_is:
+        - "6"
 
     - language: ruby
-    rvn:
-      - 2.3.3
+      rvm:
+        - 2.3.3
 
 notifications:
   email: false
