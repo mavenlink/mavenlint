@@ -76,7 +76,7 @@ yarn test
 To publish changed packages, first login:
 
 ```
-yarn login
+npm login
 ```
 
 To publish alpha versions for testing in other applications, run:
