@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary     = "Mavenlink Rubocop config"
   s.authors     = ["Mavenlnk"]
   s.email       = ["ahuth@mavenlink.com"]
-  s.files       = ["rubocop.yml", "lib/**/*.rb"]
+  s.files       = Dir["rubocop.yml", "lib/**/*.rb"]
   s.homepage    = "https://github.com/mavenlink/mavenlint"
 
   s.add_development_dependency "rake", '~> 12'
