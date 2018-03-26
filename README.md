@@ -59,6 +59,12 @@ Install dependencies for all packages by running the following from the root of 
 yarn install
 ```
 
+Run the tests with:
+
+```
+yarn test
+```
+
 To publish changed packages, first login:
 
 ```
