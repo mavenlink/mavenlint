@@ -1,6 +1,6 @@
 module.exports = {
   extends: 'airbnb',
-  plugins: ['mavenlint'],
+  plugins: ['mavenlint', 'jasmine'],
   rules: {
     'import/no-extraneous-dependencies': [
       'off',
@@ -22,5 +22,6 @@ module.exports = {
     'no-multiple-empty-lines': ["error", { "max": 1 }],
     'mavenlint/use-flux-standard-actions': 'error',
     'mavenlint/use-css-composition': 'error',
+    'jasmine/no-focused-tests': 'error',
   }
 };
