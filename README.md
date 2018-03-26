@@ -9,7 +9,7 @@ Mavenlink Ruby and Javascript linting rules.
    - [Javascript](#javascript)
    - [Ruby](#ruby)
 2. [Developing](#developing)
-   - [ESLint packages](#eslint-packages)
+   - [ESLint Packages](#eslint-packages)
 
 ## Usage
 
@@ -48,7 +48,7 @@ inherit_gem:
 
 ## Developing
 
-### ESLint packages
+### ESLint Packages
 
 For our NPM packages, we use [yarn workspaces](https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/) to publish multiple packages.
 
