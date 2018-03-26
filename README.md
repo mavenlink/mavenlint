@@ -48,6 +48,13 @@ inherit_gem:
   mavenlint: rubocop.yml
 ```
 
+If you also want the custom lint rules, require the gem again from your `.rubocop.yml`:
+
+```yml
+require:
+  - mavenlint
+```
+
 ## Developing
 
 ### ESLint Packages
