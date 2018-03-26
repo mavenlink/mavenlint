@@ -103,7 +103,7 @@ To publish a new version, first update the `mavenlint.gemspec` file with the new
 
 ```
 gem build mavenlint.gemspec
-gem publish mavenlinkt-<VERSION NUMBER>.gem
+gem publish mavenlint-<VERSION NUMBER>.gem
 ```
 
 Note that `<VERSION NUMBER>` above has to be replaced with the actual version number that you're releasing.
