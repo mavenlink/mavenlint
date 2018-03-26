@@ -4,6 +4,7 @@ Gem::Specification.new do |s|
   s.licenses    = ["MIT"]
   s.summary     = "Mavenlink Rubocop config"
   s.authors     = ["Mavenlnk"]
+  s.email       = ["ahuth@mavenlink.com"]
   s.files       = ["rubocop.yml", "lib/**/*.rb"]
   s.homepage    = "https://github.com/mavenlink/mavenlint"
 
