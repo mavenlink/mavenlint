@@ -3,6 +3,7 @@
 Mavenlink Ruby and Javascript linting rules.
 
 [![npm version](https://img.shields.io/npm/v/eslint-config-mavenlint.svg?style=flat-square)](https://www.npmjs.com/package/eslint-config-mavenlint)
+![Gem](https://img.shields.io/gem/v/mavenlint.svg)
 [![Build Status](https://travis-ci.org/mavenlink/mavenlint.svg?branch=travis)](https://travis-ci.org/mavenlink/mavenlint)
 
 1. [Usage](#usage)
