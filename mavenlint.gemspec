@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name        = "mavenlint"
-  s.version     = "1.1.0"
+  s.version     = "1.1.1"
   s.licenses    = ["MIT"]
   s.summary     = "Mavenlink Rubocop config"
   s.authors     = ["Mavenlnk"]
-  s.files       = ["rubocop.yml"]
+  s.files       = ["rubocop.yml", "lib/**/*.rb"]
   s.homepage    = "https://github.com/mavenlink/mavenlint"
 
   s.add_development_dependency "rake", '~> 12'
