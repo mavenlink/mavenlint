@@ -10,6 +10,7 @@ Mavenlink Ruby and Javascript linting rules.
    - [Ruby](#ruby)
 2. [Developing](#developing)
    - [ESLint Packages](#eslint-packages)
+   - [Ruby Gem](#ruby-gem)
 
 ## Usage
 
@@ -77,3 +78,26 @@ yarn publish-packages
 ```
 
 You will be prompted to select new versions for each changed package. Commits and tags will be generated for each and their version numbers will be updated.
+
+### Ruby Gem
+
+Install dependencies by running the following from the root of the project:
+
+```
+bundle install
+```
+
+Run the tests with:
+
+```
+rspec
+```
+
+To publish a new version, first update the `mavenlint.gemspec` file with the new version. And then build and publish the gem with:
+
+```
+gem build mavenlint.gemspec
+gem publish mavenlinkt-<VERSION NUMBER>.gem
+```
+
+Note that `<VERSION NUMBER>` above has to be replaced with the actual version number that you're releasing.
