@@ -14,13 +14,6 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
         RUBY
       end
 
-      it 'detects simple stubs' do
-        expect_offense(<<~RUBY)
-          stub(user).is_administrator? { false }
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
-        RUBY
-      end
-
       it 'passes when rspec-mocks is used' do
         expect_no_offenses(<<~RUBY)
           expect(instance).to receve(:should_email?) { true }
@@ -28,8 +21,8 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
       end
 
       it 'autocorrects' do
-        before = 'stub(instance).should_email? { true }'
-        after = 'allow(instance).to receve(:should_email?) { true }'
+        before = 'stub(user).is_administrator? { false }'
+        after = 'allow(user).to receve(:is_administrator?) { false }'
         expect(autocorrect_source(before)).to eq(after)
       end
     end
