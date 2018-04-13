@@ -9,14 +9,14 @@ module RuboCop
         def_node_matcher :double_r?, <<~PATTERN
           (send
             (send nil? :stub
-              (send nil? :instance)) :should_email?)
+              (send nil? $_stubbed)) $_method)
         PATTERN
 
         def_node_matcher :in_block?, <<~PATTERN
           (block
             #double_r?
-            (args)
-            (true))
+            _blockargs
+            _blockbody)
         PATTERN
 
         def on_block(node)
