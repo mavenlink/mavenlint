@@ -37,7 +37,7 @@ module RuboCop
 
         def replacement(matches)
           stubbed, method, blockargs, blockbody = matches
-          "expect(#{stubbed}).to receve(:#{method}) { #{blockbody} }"
+          "allow(#{stubbed}).to receve(:#{method}) { #{blockbody} }"
         end
       end
     end
