@@ -7,16 +7,20 @@ module RuboCop
         MSG = 'Use rspec-mocks'.freeze
 
         def_node_matcher :double_r?, <<~PATTERN
+          (send
+            (send nil? :stub
+              (send nil? :instance)) :should_email?)
+        PATTERN
+
+        def_node_matcher :in_block?, <<~PATTERN
           (block
-            (send
-              (send nil? :stub
-                (send nil? :instance)) :should_email?)
+            #double_r?
             (args)
             (true))
         PATTERN
 
         def on_block(node)
-          return unless double_r?(node)
+          return unless in_block?(node)
           add_offense(node, message: MSG)
         end
       end
