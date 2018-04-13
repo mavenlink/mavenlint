@@ -6,8 +6,8 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
   subject(:cop) { described_class.new(config) }
 
   describe 'stubs' do
-    describe 'simple examples' do
-      it 'detects simple stubs' do
+    describe 'simple block with no arguments' do
+      it 'detects them' do
         expect_offense(<<~RUBY)
           stub(instance).should_email? { true }
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
