@@ -26,6 +26,12 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
           expect(instance).to receve(:should_email?) { true }
         RUBY
       end
+
+      it 'autocorrects' do
+        before = 'stub(instance).should_email? { true }'
+        after = 'expect(instance).to receve(:should_email?) { true }'
+        expect(autocorrect_source(before)).to eq(after)
+      end
     end
   end
 end
