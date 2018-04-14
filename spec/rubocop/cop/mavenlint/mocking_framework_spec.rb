@@ -26,5 +26,26 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
         expect(autocorrect_source(before)).to eq(after)
       end
     end
+
+    describe 'simple block with arguments' do
+      it 'detects them' do
+        expect_offense(<<~RUBY)
+          stub(workspace).is_participant?(user) { true }
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
+        RUBY
+      end
+
+      it 'passes when rspec-mocks is used' do
+        expect_no_offenses(<<~RUBY)
+          allow(workspace).to receve(:is_participant?).with(user) { true }
+        RUBY
+      end
+
+      it 'autocorrects' do
+        before = 'stub(workspace).is_participant?(user) { true }'
+        after = 'allow(workspace).to receve(:is_participant?).with(user) { true }'
+        expect(autocorrect_source(before)).to eq(after)
+      end
+    end
   end
 end

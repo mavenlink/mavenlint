@@ -7,8 +7,8 @@ module RuboCop
         MSG = 'Use rspec-mocks'.freeze
         RR_PATTERN = (<<~PATTERN).freeze
           (send
-            (send nil? :stub
-              (send nil? $_stubbed)) $_method)
+            (send nil? :stub (send nil? $_stubbed))
+            $...)
         PATTERN
 
         def_node_matcher :double_r?, RR_PATTERN
@@ -37,7 +37,11 @@ module RuboCop
 
         def replacement(matches)
           stubbed, method, blockargs, blockbody = matches
-          "allow(#{stubbed}).to receve(:#{method}) { #{blockbody} }"
+          if method.count == 1
+            "allow(#{stubbed}).to receve(:#{method.first}) { #{blockbody} }"
+          else
+            "allow(#{stubbed}).to receve(:#{method.first}).with(#{method.drop(1).map(&:source).join(', ')}) { #{blockbody} }"
+          end
         end
       end
     end
