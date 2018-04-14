@@ -6,11 +6,32 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
   subject(:cop) { described_class.new(config) }
 
   describe 'stubs' do
+    describe 'with no block' do
+      it 'detects them' do
+        expect_offense(<<~RUBY)
+          stub(foo).bar
+          ^^^^^^^^^^^^^ Use rspec-mocks
+        RUBY
+      end
+
+      it 'passes when rspec-mocks is used' do
+        expect_no_offenses(<<~RUBY)
+          allow(foo).to receve(:bar)
+        RUBY
+      end
+
+      it 'autocorrects' do
+        before = 'stub(foo).bar'
+        after = 'allow(foo).to receve(:bar)'
+        expect(autocorrect_source(before)).to eq(after)
+      end
+    end
+
     describe 'simple block with no arguments' do
       it 'detects them' do
         expect_offense(<<~RUBY)
           stub(instance).should_email? { true }
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
         RUBY
       end
 
@@ -31,7 +52,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::MockingFramework do
       it 'detects them' do
         expect_offense(<<~RUBY)
           stub(workspace).is_participant?(user) { true }
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use rspec-mocks
         RUBY
       end
 

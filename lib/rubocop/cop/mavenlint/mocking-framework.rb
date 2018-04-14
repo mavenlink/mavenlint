@@ -5,42 +5,35 @@ module RuboCop
     module Mavenlint
       class MockingFramework < RuboCop::Cop::Cop
         MSG = 'Use rspec-mocks'.freeze
-        RR_PATTERN = (<<~PATTERN).freeze
+
+        def_node_matcher :double_r?, <<~PATTERN
           (send
-            (send nil? :stub (send nil? $_stubbed))
+            (send nil? :stub
+              (send nil? $_stubbed))
             $...)
         PATTERN
 
-        def_node_matcher :double_r?, RR_PATTERN
-
-        def_node_matcher :in_block?, <<~PATTERN
-          (block
-            #{RR_PATTERN}
-            $_blockargs
-            ($_blockbody))
-        PATTERN
-
-        def on_block(node)
-          return unless in_block?(node)
+        def on_send(node)
+          return unless double_r?(node)
           add_offense(node, message: MSG)
         end
 
         def autocorrect(node)
           lambda do |corrector|
-            if matches = in_block?(node)
-              corrector.replace(node.source_range, replacement(matches))
+            if matches = double_r?(node)
+              corrector.replace(node.source_range, replacement(*matches))
             end
           end
         end
 
         private
 
-        def replacement(matches)
-          stubbed, method, blockargs, blockbody = matches
-          if method.count == 1
-            "allow(#{stubbed}).to receve(:#{method.first}) { #{blockbody} }"
+        def replacement(stubbed, method_with_args)
+          if method_with_args.count == 1
+            "allow(#{stubbed}).to receve(:#{method_with_args.first})"
           else
-            "allow(#{stubbed}).to receve(:#{method.first}).with(#{method.drop(1).map(&:source).join(', ')}) { #{blockbody} }"
+            args = method_with_args.drop(1).map(&:source)
+            "allow(#{stubbed}).to receve(:#{method_with_args.first}).with(#{args.join(', ')})"
           end
         end
       end
