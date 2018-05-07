@@ -8,7 +8,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UnsafeMassAssignment do
   it 'registers an offense when mass assignment of foreign keys is allowed' do
     expect_offense(<<~RUBY)
       attr_accessible :story, :name, :account_id, :level
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not allow mass-assignment of foreign key columns
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not allow mass-assignment of foreign key columns. See http://bit.ly/2IjZco0
     RUBY
   end
 
