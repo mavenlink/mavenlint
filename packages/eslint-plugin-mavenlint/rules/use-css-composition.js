@@ -21,7 +21,7 @@ module.exports = {
         if (expression.type === 'TemplateLiteral') {
           context.report({
             node,
-            message: 'Use CSS composition instead of string interpolation to DRY up styles',
+            message: 'Use CSS composition instead of string interpolation. See http://bit.ly/2KKgtFc',
           });
         }
       }

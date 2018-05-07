@@ -28,7 +28,7 @@ module.exports = {
         if (extraKeys.length > 0) {
           context.report({
             node,
-            message: 'Unexpected keys: {{ unexpectedKeys }}. Generally, redux actions should only have type, payload, error, and meta properties',
+            message: 'Unexpected keys: {{ unexpectedKeys }} in Redux action. See http://bit.ly/2rqtYlc',
             data: {
               unexpectedKeys: extraKeys.join(', '),
             },
