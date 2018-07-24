@@ -1,4 +1,4 @@
-const standardKeys = ['error', 'meta', 'payload', 'type'];
+const standardKeys = ['error', 'meta', 'payload', 'type', 'log'];
 
 module.exports = {
   meta: {

@@ -25,6 +25,11 @@ ruleTester.run('use-flux-standard-actions', rule, {
       code: 'function test() { return function (dispatch) { dispatch({ foo: "BAR" }); } }',
       filename: 'lib/action-creators/foo.js',
     },
+    // log property.
+    {
+      code: 'function test() { return { type: "FOO", log: true }; }',
+      filename: 'lib/action-creators/foo.js',
+    },
   ],
   invalid: [
     // Basic case with a non compliant property.
