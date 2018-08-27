@@ -24,6 +24,20 @@ ruleTester.run('no-unnecessary-jasmine-enzyme', rule, {
       filename: 'spec/foobar-spec.jsx',
     },
     {
+      // Invoking jasmineEnzyme AND using a negated matcher.
+      code: [
+        'describe("tests", () => {',
+        '  beforeEach(() => {',
+        '    jasmineEnzyme();',
+        '  });',
+        '  it("is true", () => {',
+        '    expect(true).not.toBeEmptyRender();',
+        '  });',
+        '});',
+      ].join('\n'),
+      filename: 'spec/foobar-spec.jsx',
+    },
+    {
       // Jasmine enzyme NOT invoked.
       code: [
         'describe("tests", () => {',
