@@ -1,9 +1,8 @@
 const enzymeMatchers = [
   'toBeChecked',
   'toBeDisabled',
-  'toBeEmpty',
   'toBeEmptyRender',
-  'toBePresent',
+  'toExist',
   'toContainReact',
   'toHaveClassName',
   'toHaveHTML',
