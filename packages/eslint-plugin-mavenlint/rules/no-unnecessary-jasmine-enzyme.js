@@ -38,9 +38,14 @@ module.exports = {
       },
 
       MemberExpression(node) {
+        // Go no further if we already know we're using enzyme matchers.
+        if (usesEnzymeMatchers) {
+          return;
+        }
+
         const isEnzymeMatcher = enzymeMatchers.includes(node.property.name);
 
-        if (isEnzymeMatcher && !usesEnzymeMatchers) {
+        if (isEnzymeMatcher) {
           usesEnzymeMatchers = true;
         }
       },
