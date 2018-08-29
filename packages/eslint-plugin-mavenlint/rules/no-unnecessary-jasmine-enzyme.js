@@ -35,16 +35,13 @@ module.exports = {
         if (node.callee.name === 'jasmineEnzyme') {
           setupNodes.push(node);
         }
+      },
 
-        // Find assertions. These are calls to `expect` followed by accessing a property on the result.
-        if (node.callee.name === 'expect' && node.parent.type === 'MemberExpression') {
-          // Get the name of the accessed property (for example, toEqual).
-          const matcherName = node.parent.property.name;
-          // Determine if the property is one of the enzyme-matchers.
-          const isEnzymeMatcher = enzymeMatchers.includes(matcherName);
-          if (isEnzymeMatcher && !usesEnzymeMatchers) {
-            usesEnzymeMatchers = true;
-          }
+      MemberExpression(node) {
+        const isEnzymeMatcher = enzymeMatchers.includes(node.property.name);
+
+        if (isEnzymeMatcher && !usesEnzymeMatchers) {
+          usesEnzymeMatchers = true;
         }
       },
 
