@@ -46,7 +46,7 @@ module.exports = {
       },
 
       'Program:exit': function () {
-        // Determine if jasmineEnzyme was setup and we _don't_ use one of its matchers.
+        // Determine if jasmineEnzyme was setup but we _didn't_ use any of its matchers.
         if (setupNodes.length > 0 && !usesEnzymeMatchers) {
           setupNodes.forEach(function (node) {
             context.report({
