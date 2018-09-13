@@ -1,4 +1,4 @@
-require 'rubocop/cop/mavenlint/use-application-record'
+require 'rubocop/cop/mavenlint/use_application_record'
 require 'spec_helper'
 
 RSpec.describe RuboCop::Cop::Mavenlint::UseApplicationRecord do
