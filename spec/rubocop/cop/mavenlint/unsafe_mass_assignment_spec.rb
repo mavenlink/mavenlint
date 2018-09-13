@@ -1,4 +1,4 @@
-require 'rubocop/cop/mavenlint/unsafe-mass-assignment'
+require 'rubocop/cop/mavenlint/unsafe_mass_assignment'
 require 'spec_helper'
 
 RSpec.describe RuboCop::Cop::Mavenlint::UnsafeMassAssignment do
