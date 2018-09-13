@@ -57,7 +57,7 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/IndentationWidth:
   Enabled: true
 
-# Only run our Capybara checks directories that will have Capybara tests.
+# Only run our Capybara checks in directories that will have Capybara tests.
 Mavenlint/UseFastCapybaraMatchers:
   Include:
     - spec/selenium/**/*.rb
