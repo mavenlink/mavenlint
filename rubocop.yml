@@ -56,3 +56,9 @@ Layout/EmptyLinesAroundMethodBody:
 # Ensure that two spaces are used for indentation.
 Layout/IndentationWidth:
   Enabled: true
+
+# Only run our Capybara checks directories that will have Capybara tests.
+Mavenlint/UseFastCapybaraMatchers:
+  Include:
+    - spec/selenium/**/*.rb
+    - spec/features/**/*.rb
