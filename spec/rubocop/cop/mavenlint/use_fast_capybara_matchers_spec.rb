@@ -1,7 +1,7 @@
-require 'rubocop/cop/mavenlint/use_fast_selenium_matchers'
+require 'rubocop/cop/mavenlint/use_fast_capybara_matchers'
 require 'spec_helper'
 
-RSpec.describe RuboCop::Cop::Mavenlint::UseFastSeleniumMatchers do
+RSpec.describe RuboCop::Cop::Mavenlint::UseFastCapybaraMatchers do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 

@@ -18,7 +18,7 @@ module RuboCop
       #   expect(page).to have_no_text('Hi')
       #
       # Which will pass as soon as the text is not detected without any timeout.
-      class UseFastSeleniumMatchers < RuboCop::Cop::Cop
+      class UseFastCapybaraMatchers < RuboCop::Cop::Cop
         MSG = 'Use a `to have_no_*` selector'.freeze
 
         def_node_matcher :slow_capybara_matcher?, <<~PATTERN
