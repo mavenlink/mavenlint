@@ -8,14 +8,14 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseFastCapybaraMatchers do
   it 'registers an offense when "to_not have_*" is used' do
     expect_offense(<<~RUBY)
       expect(page).to_not have_text('Hello')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#usefastcapybaramatchers
     RUBY
   end
 
   it 'registers an offense when "to_not have_*" is used' do
     expect_offense(<<~RUBY)
       expect(page.find('.greeting')).to_not have_text('Hello')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#usefastcapybaramatchers
     RUBY
   end
 
@@ -23,7 +23,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseFastCapybaraMatchers do
   it 'registers an offense when "to_not have_*" is used' do
     expect_offense(<<~RUBY)
       expect(page).to_not have_css('.wat')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#usefastcapybaramatchers
     RUBY
   end
 

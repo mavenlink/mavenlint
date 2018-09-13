@@ -28,7 +28,7 @@ module.exports = {
         if (extraKeys.length > 0) {
           context.report({
             node,
-            message: 'Unexpected keys: {{ unexpectedKeys }} in Redux action. See http://bit.ly/2rqtYlc',
+            message: 'Unexpected keys: {{ unexpectedKeys }} in Redux action. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#use-flux-standard-actions',
             data: {
               unexpectedKeys: extraKeys.join(', '),
             },

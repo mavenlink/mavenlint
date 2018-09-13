@@ -56,7 +56,7 @@ module.exports = {
           setupNodes.forEach(function (node) {
             context.report({
               node,
-              message: 'jasmineEnzyme setup, but never used.',
+              message: 'jasmineEnzyme setup, but never used. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#no-unnecessary-jasmine-enzyme',
             });
           });
         }

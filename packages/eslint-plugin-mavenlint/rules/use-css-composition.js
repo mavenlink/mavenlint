@@ -21,7 +21,7 @@ module.exports = {
         if (expression.type === 'TemplateLiteral') {
           context.report({
             node,
-            message: 'Use CSS composition instead of string interpolation. See http://bit.ly/2KKgtFc',
+            message: 'Use CSS composition instead of string interpolation. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#use-css-composition',
           });
         }
       }
