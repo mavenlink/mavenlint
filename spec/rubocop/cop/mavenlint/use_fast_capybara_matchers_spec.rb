@@ -14,22 +14,16 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseFastCapybaraMatchers do
 
   it 'registers an offense when "to_not have_*" is used' do
     expect_offense(<<~RUBY)
+      expect(page.find('.greeting')).to_not have_text('Hello')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
+    RUBY
+  end
+
+
+  it 'registers an offense when "to_not have_*" is used' do
+    expect_offense(<<~RUBY)
       expect(page).to_not have_css('.wat')
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
-    RUBY
-  end
-
-  it 'registers an offense when "to_not have_*" is used' do
-    expect_offense(<<~RUBY)
-      expect(page).to_not have_a_foobar
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
-    RUBY
-  end
-
-  it 'registers an offense when "to_not have_*" is used' do
-    expect_offense(<<~RUBY)
-      expect(page.find('.baz')).to_not have_a_foobar
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector
     RUBY
   end
 
@@ -50,6 +44,12 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseFastCapybaraMatchers do
 
     expect_no_offenses(<<~RUBY)
       expect(page).to have_css('.wat')
+    RUBY
+  end
+
+  it 'passes when a non-Capybara matcher is used' do
+    expect_no_offenses(<<~RUBY)
+      expect(page).to_not have_a_foobar
     RUBY
   end
 end
