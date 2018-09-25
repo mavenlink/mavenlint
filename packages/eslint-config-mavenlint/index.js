@@ -2,7 +2,6 @@ module.exports = {
   extends: 'airbnb',
   plugins: ['mavenlint', 'jasmine'],
   rules: {
-    'import/no-extraneous-dependencies': 'error',
     'import/no-unresolved': 'off',
     'max-len': ['error', {
       code: 120,
