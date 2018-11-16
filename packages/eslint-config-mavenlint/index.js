@@ -20,6 +20,7 @@ module.exports = {
     'react/jsx-boolean-value': 'off',
     'no-console': 'error',
     'no-multiple-empty-lines': ["error", { "max": 1 }],
+    'no-use-before-define': ["error", { "functions": false, "classes": true }],
     'mavenlint/use-flux-standard-actions': 'error',
     'mavenlint/use-css-composition': 'error',
     'mavenlint/no-unnecessary-jasmine-enzyme': 'error',
