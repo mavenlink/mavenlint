@@ -19,6 +19,7 @@ module.exports = {
     'func-names': 'off',
     'no-console': 'error',
     'no-multiple-empty-lines': ["error", { "max": 1 }],
+    'no-use-before-define': ["error", { "functions": false, "classes": true }],
     'jasmine/no-focused-tests': 'error',
   },
 };
