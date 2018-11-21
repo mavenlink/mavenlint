@@ -19,7 +19,7 @@ How to use the Mavenlint lint rules for Javascript or Ruby projects.
 
 ### Javascript
 
-Install the Mavenlint ESLint configuration as a dev dependency.
+Install one of the Mavenlint ESLint configurations as a dev dependency.
 
 ```bash
 yarn add eslint-config-mavenlint --dev
@@ -32,6 +32,8 @@ Then, extend `mavenlint` in your `.eslintrc` file.
   "extends": "mavenlint"
 }
 ```
+
+For React linting use `eslint-config-mavenlint-react` and `mavenlint-react` instead.
 
 ### Ruby
 
