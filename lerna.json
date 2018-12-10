@@ -1,14 +1,14 @@
 {
-  "commands": {
+  "command": {
     "publish": {
-      "ignore": [
+      "ignoreChanges": [
         "*.md",
         "*-spec.js"
       ]
     }
   },
   "independent": true,
-  "lerna": "2.7.1",
+  "lerna": "3.6.0",
   "npmClient": "yarn",
   "packages": [
     "packages/*"
