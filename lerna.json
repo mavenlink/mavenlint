@@ -7,8 +7,6 @@
       ]
     }
   },
-  "independent": true,
-  "lerna": "3.6.0",
   "npmClient": "yarn",
   "packages": [
     "packages/*"
