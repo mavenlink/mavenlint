@@ -1,6 +1,5 @@
 module.exports = {
   extends: 'airbnb',
-  plugins: ['jasmine'],
   rules: {
     'import/no-extraneous-dependencies': [
       'off',
@@ -20,6 +19,5 @@ module.exports = {
     'no-console': 'error',
     'no-multiple-empty-lines': ["error", { "max": 1 }],
     'no-use-before-define': ["error", { "functions": false, "classes": true }],
-    'jasmine/no-focused-tests': 'error',
   },
 };

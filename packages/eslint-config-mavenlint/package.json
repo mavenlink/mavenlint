@@ -10,7 +10,6 @@
     "eslint-plugin-import": ">=2.8.0"
   },
   "dependencies": {
-    "eslint-config-airbnb": "15.1.0",
-    "eslint-plugin-jasmine": "^2.9.3"
+    "eslint-config-airbnb": "15.1.0"
   }
 }
