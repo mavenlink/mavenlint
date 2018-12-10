@@ -7,7 +7,6 @@
       ]
     }
   },
-  "npmClient": "yarn",
   "packages": [
     "packages/*"
   ],
