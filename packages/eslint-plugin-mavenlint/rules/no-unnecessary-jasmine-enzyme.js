@@ -14,7 +14,6 @@ const enzymeMatchers = [
   'toHaveRef',
   'toHaveState',
   'toHaveStyle',
-  'toHaveTagName',
   'toHaveText',
   'toIncludeText',
   'toHaveValue',
