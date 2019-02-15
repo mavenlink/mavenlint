@@ -14,8 +14,12 @@ module.exports = {
         const path = context.getFilename();
         if (!path.includes('action-creators')) { return; }
 
-        // Is this return value an Object literal?
         const statement = node.argument;
+
+        // Is the return statement empty
+        if (!statement) { return; }
+
+        // Is this return value an Object literal?
         if (statement.type !== 'ObjectExpression') { return; }
 
         // Does this Object have a `type` property? If so, infer that this is an action.
