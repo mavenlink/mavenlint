@@ -30,6 +30,11 @@ ruleTester.run('use-flux-standard-actions', rule, {
       code: 'function test() { return { type: "FOO", log: true }; }',
       filename: 'lib/action-creators/foo.js',
     },
+    // thunk with empty return.
+    {
+      code: 'function test() { return function (dispatch) { return; } }',
+      filename: 'lib/action-creators/foo.js',
+    },
   ],
   invalid: [
     // Basic case with a non compliant property.
@@ -37,6 +42,6 @@ ruleTester.run('use-flux-standard-actions', rule, {
       code: 'function test() { return { type: "FOO", data: "BAR" } }',
       filename: 'lib/action-creators/foo.js',
       errors: [{ type: 'ReturnStatement' }],
-    }
+    },
   ],
 });
