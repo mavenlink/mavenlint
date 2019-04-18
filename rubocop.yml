@@ -67,3 +67,8 @@ Mavenlint/UseFastCapybaraMatchers:
 Mavenlint/UseApiController:
   Include:
     - engines/api/app/controllers/**/*.rb
+    -
+# Only run our controller checks in the controller directory
+Mavenlint/UseApplicationController:
+  Include:
+    - app/controllers/**/*.rb
