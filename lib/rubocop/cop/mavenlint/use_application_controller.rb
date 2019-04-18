@@ -3,7 +3,7 @@ require 'rubocop'
 module RuboCop
   module Cop
     module Mavenlint
-      # Enforce models inheriting from ApplicationController instead of ActionController::Base
+      # Enforce controllers inheriting from ApplicationController instead of ActionController::Base
       #
       # For example
       #
@@ -18,7 +18,7 @@ module RuboCop
       class UseApplicationController < RuboCop::Cop::Cop
         MSG = 'Controllers should subclass `ApplicationController`.'.freeze
         SUPERCLASS = 'ApplicationController'.freeze
-        BASE_PATTERN = '(const (const nil? :ApplicationController) :Base)'.freeze
+        BASE_PATTERN = '(const (const nil? :ActionController) :Base)'.freeze
 
         include RuboCop::Cop::EnforceSuperclass
       end
