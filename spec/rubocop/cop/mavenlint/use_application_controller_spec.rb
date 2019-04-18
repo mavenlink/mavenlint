@@ -18,7 +18,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseApplicationController do
     RUBY
   end
 
-  it 'passes when a controller inherits from an other class' do
+  it 'passes when a controller inherits from another class' do
     expect_no_offenses(<<~RUBY)
       class MyController < ApiController; end
     RUBY

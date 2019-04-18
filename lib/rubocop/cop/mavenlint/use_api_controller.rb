@@ -3,11 +3,11 @@ require 'rubocop'
 module RuboCop
   module Cop
     module Mavenlint
-      # Enforce Api controllers inheriting from ApiController instead of ActionController::Base
+      # Enforce Api controllers inheriting from ApiController instead of ApplicationController
       #
       # For example
       #
-      #   class SomeApiController < ActionController::Base
+      #   class SomeApiController < ApplicationController
       #   end
       #
       # should be
@@ -16,9 +16,9 @@ module RuboCop
       #   end
       #
       class UseApiController < RuboCop::Cop::Cop
-        MSG = 'Controllers should subclass `ApiController`.'.freeze
+        MSG = 'Api Controllers should subclass `ApiController`.'.freeze
         SUPERCLASS = 'ApiController'.freeze
-        BASE_PATTERN = '(const (const nil? :ActionController) :Base)'.freeze
+        BASE_PATTERN = '(const nil? :ApplicationController)'.freeze
 
         include RuboCop::Cop::EnforceSuperclass
       end

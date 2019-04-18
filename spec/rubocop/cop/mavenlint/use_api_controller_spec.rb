@@ -5,10 +5,10 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseApiController do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 
-  it 'registers an offense when an api controller directly inherits from ActionController::Base' do
+  it 'registers an offense when an api controller directly inherits from ApplicationController' do
     expect_offense(<<~RUBY)
-      class MyController < ActionController::Base; end
-                           ^^^^^^^^^^^^^^^^^^^^^^ Controllers should subclass `ApiController`.
+      class MyController < ApplicationController; end
+                           ^^^^^^^^^^^^^^^^^^^^^ Api Controllers should subclass `ApiController`.
     RUBY
   end
 
@@ -18,7 +18,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseApiController do
     RUBY
   end
 
-  it 'passes when an aoi controller inherits from an other class' do
+  it 'passes when an api controller inherits from another class' do
     expect_no_offenses(<<~RUBY)
       class ApiController < CoolerApiController; end
     RUBY
