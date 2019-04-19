@@ -62,3 +62,13 @@ Mavenlint/UseFastCapybaraMatchers:
   Include:
     - spec/selenium/**/*.rb
     - spec/features/**/*.rb
+
+# Only run our Api controller checks in the api controller directory
+Mavenlint/UseApiController:
+  Include:
+    - engines/api/app/controllers/**/*.rb
+    -
+# Only run our controller checks in the controller directory
+Mavenlint/UseApplicationController:
+  Include:
+    - app/controllers/**/*.rb
