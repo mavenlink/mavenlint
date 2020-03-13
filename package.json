@@ -6,7 +6,8 @@
   "scripts": {
     "publish-canary": "lerna publish --canary",
     "publish-packages": "lerna publish",
-    "test": "jest"
+    "test": "jest",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
