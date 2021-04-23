@@ -72,3 +72,8 @@ Mavenlint/UseApiController:
 Mavenlint/UseApplicationController:
   Include:
     - app/controllers/**/*.rb
+
+# Only run FactoryBot detection in specs
+Mavenlint/DirectFactoryBotInvocation:
+  Include:
+    - \**/spec*/**/*.rb
