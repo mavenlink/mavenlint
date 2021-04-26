@@ -78,3 +78,9 @@ Mavenlint/DirectFactoryBotInvocation:
   Include:
     - spec*/**/*.rb
     - engines/**/spec*/**/*.rb
+
+# Only check for slow helpers in unit specs
+Mavenlint/RequireSlowHelpers:
+  Include:
+    - spec/unit/**/*spec.rb
+    - spec_v2/unit/**/*spec.rb
