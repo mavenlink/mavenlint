@@ -8,7 +8,7 @@ module RuboCop
         SLOW_HELPERS = %w(spec_helper rails_helper)
 
         def_node_matcher :requires_slow_helpers, <<~PATTERN
-          (send ... :require
+          (send nil? :require
             (str #slow_helper?))
         PATTERN
 
