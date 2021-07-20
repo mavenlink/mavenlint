@@ -25,11 +25,17 @@ module RuboCop
         end
 
         def get_column_type(node, column_type_offset)
-          node = node.children[column_type_offset]
+          return nil if node.nil?
+
           if node.respond_to?(:children)
-            node.children.first
+            node = node.children[column_type_offset]
+            if node.respond_to?(:children)
+              node.children.first
+            else
+              node
+            end
           else
-            node
+            node[column_type_offset].children.first
           end
         end
 
@@ -38,11 +44,22 @@ module RuboCop
         end
 
         def get_column_name(node, column_name_offset)
-          node = node.children[column_name_offset]
+          return nil if node.nil?
+
           if node.respond_to?(:children)
-            node.children.first.to_s
+            node = node.children[column_name_offset]
+            if node.respond_to?(:children)
+              node.children.first.to_s
+            else
+              node
+            end
           else
-            node
+            node = node[column_name_offset]
+            if node.respond_to?(:children)
+              node.children.first.to_s
+            else
+              node.to_s
+            end
           end
         end
 
@@ -76,7 +93,13 @@ module RuboCop
           column_name_offset = 2
 
           def get_column_definitions(node)
-            node.block_node.children[2].children
+            block_node = node.block_node
+            if block_node.children[2].is_a? RuboCop::AST::SendNode
+              return [block_node.children[2].children]
+            elsif block_node.is_a? RuboCop::AST::Node
+              return block_node.children[2].children
+            end
+            []
           end
 
           get_column_definitions(node).each do |column|

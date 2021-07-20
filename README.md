@@ -109,6 +109,13 @@ Run the tests with:
 rspec
 ```
 
+Run your linter against BigMaven:
+
+```
+cd ~/workspace/mavenlink
+bundle exec rubocop --require ~/workspace/mavenlint/lib/rubocop/cop/mavenlint/bigint_for_migration_keys.rb
+```
+
 To publish a new version, first update the `mavenlint.gemspec` file with the new version. And then build and publish the gem with:
 
 ```

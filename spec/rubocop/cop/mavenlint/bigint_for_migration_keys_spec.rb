@@ -101,5 +101,43 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
         RUBY
       end
     end
+
+    it 'registers no offense' do
+      expect_no_offenses(<<~RUBY)
+        class AddAnalyticsReportsClaimsTable < ActiveRecord::Migration[4.2]
+          def change
+            create_table :access_control_analytics_reports_claims do |t|
+              t.string :report_name, null: false
+            end
+          end
+        end
+      RUBY
+
+      expect_no_offenses(<<~RUBY)
+        class CreateEgo < ActiveRecord::Migration[5.2]
+          def change
+            create_table :egos do |t|
+              t.timestamps
+            end
+          end
+        end
+      RUBY
+
+      expect_no_offenses(<<~RUBY)
+        class CreateEgoModels < ActiveRecord::Migration[5.2]
+          def change
+            create_table :the_network_ego_records do |t|
+              t.timestamps
+            end
+        
+            create_table :the_network_ego_memberships do |t|
+              t.timestamps
+              t.bigint :user_id, :required => true, :nullable => false, :foreign_key => true, :unique => true
+              t.bigint :ego_record_id, :required => true, :nullable => false, :foreign_key => true, :unique => false
+            end
+          end
+        end
+      RUBY
+    end
   end
 end
