@@ -84,4 +84,22 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
       end
     end
   end
+
+  context 'create_table' do
+    context 'foreign key' do
+      it 'registers an offense when a *_id column is added as integer' do
+        expect_offense(<<~RUBY)
+          def change
+            create_table :new_account_invitations do |t|
+              t.integer :inviter_id, null: false
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Foreign keys must be of type BIGINT
+              t.string :email_address, null: false
+              t.string :token, null: false, :limit => 36
+              t.timestamps
+            end
+          end
+        RUBY
+      end
+    end
+  end
 end
