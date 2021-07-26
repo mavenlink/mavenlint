@@ -116,11 +116,12 @@ cd ~/workspace/mavenlink
 bundle exec rubocop --require ~/workspace/mavenlint/lib/rubocop/cop/mavenlint/bigint_for_migration_keys.rb
 ```
 
+(DEPRECATED, we install from GitHub now)
 To publish a new version, first update the `mavenlint.gemspec` file with the new version. And then build and publish the gem with:
 
 ```
 gem build mavenlint.gemspec
-gem publish mavenlint-<VERSION NUMBER>.gem
+gem push mavenlint-<VERSION NUMBER>.gem
 ```
 
 Note that `<VERSION NUMBER>` above has to be replaced with the actual version number that you're releasing.
