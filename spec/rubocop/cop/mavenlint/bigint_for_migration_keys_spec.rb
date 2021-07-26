@@ -86,6 +86,17 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
   end
 
   context 'create_table' do
+    context 'primary key' do
+      it 'registers an offense when table is created with integer pk' do
+        expect_offense(<<~RUBY)
+          create_table "access_control_analytics_reports_claims", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Primary keys must be of type BIGINT
+            t.string "report_name", null: false
+          end
+        RUBY
+      end
+    end
+
     context 'foreign key' do
       it 'registers an offense when a *_id column is added as integer' do
         expect_offense(<<~RUBY)
@@ -103,6 +114,12 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
     end
 
     it 'registers no offense' do
+      expect_no_offenses(<<~RUBY)
+        create_table "access_control_analytics_reports_claims", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+          t.string "report_name", null: false
+        end
+      RUBY
+
       expect_no_offenses(<<~RUBY)
         class AddAnalyticsReportsClaimsTable < ActiveRecord::Migration[4.2]
           def change

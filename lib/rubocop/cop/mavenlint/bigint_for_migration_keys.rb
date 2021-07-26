@@ -102,6 +102,24 @@ module RuboCop
             []
           end
 
+          def get_table_id_type(node)
+            begin
+              id_type = node.children[3].children[0].children
+              if id_type[0].children[0] == :id
+                return id_type[1].children[0]
+              end
+            rescue
+            end
+            nil
+          end
+
+          table_id_type = get_table_id_type(node)
+          unless table_id_type.nil?
+            if table_id_type == :integer
+              add_offense(node, message: PK_VIOLATION_MSG)
+            end
+          end
+
           get_column_definitions(node).each do |column|
             if is_foreign_id_column(column, column_name_offset) && is_integer_column(column, column_type_offset)
               add_offense(column, message: FK_VIOLATION_MSG)
