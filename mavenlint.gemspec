@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "mavenlint"
-  s.version     = "1.4.0"
+  s.version     = "1.5.0"
   s.licenses    = ["MIT"]
   s.summary     = "Mavenlink Rubocop config"
   s.authors     = ["Mavenlnk"]

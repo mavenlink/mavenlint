@@ -84,3 +84,8 @@ Mavenlint/RequireSlowHelpers:
   Include:
     - spec/unit/**/*spec.rb
     - spec_v2/unit/**/*spec.rb
+
+# Only check for primary and foreign key types in migrations
+Mavenlint/BigIntForMigrationKeys:
+  Include:
+    - db/migrate/*.rb
