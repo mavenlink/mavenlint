@@ -89,3 +89,7 @@ Mavenlint/RequireSlowHelpers:
 Mavenlint/BigIntForMigrationKeys:
   Include:
     - db/migrate/*.rb
+
+Mavenlint/NoMoreIndexes:
+  Include:
+    - db/migrate/*.rb
