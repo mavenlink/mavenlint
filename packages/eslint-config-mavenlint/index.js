@@ -15,6 +15,7 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'no-unused-expressions': ['error', { allowTernary: true }],
     'arrow-body-style': 'off',
+    'arrow-parens': 'off',
     'func-names': 'off',
     'no-console': 'error',
     'no-multiple-empty-lines': ["error", { "max": 1 }],
