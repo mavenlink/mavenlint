@@ -7,7 +7,7 @@ module.exports = {
     ],
     'import/no-unresolved': 'off',
     'max-len': ['error', {
-      code: 120,
+      code: 240,
       ignoreComments: true,
       ignoreStrings: true,
     }],
