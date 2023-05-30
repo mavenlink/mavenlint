@@ -89,3 +89,9 @@ Mavenlint/RequireSlowHelpers:
 Mavenlint/BigIntForMigrationKeys:
   Include:
     - db/migrate/*.rb
+
+# Only check for associations in models
+Mavenlint/NoDependentDestroyAccount:
+  Include:
+    - app/**/models/**/*.rb
+    - lib/**/models/**/*.rb
