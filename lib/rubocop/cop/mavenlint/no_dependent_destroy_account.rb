@@ -23,9 +23,12 @@ module RuboCop
           (send nil? :belongs_to
             (sym :account)
             (hash
+              _
               (pair
                 (sym :dependent)
-                (sym :destroy))))
+                (sym :destroy))
+              _
+            ))
         PATTERN
 
         def on_send(node)
