@@ -20,10 +20,11 @@ module RuboCop
 
         ASSOCIATIONS = %i[belongs_to has_many has_one has_and_belongs_to_many].freeze
         DEPENDENT_DESCTRUCTIVES = %i[destroy destroy_async delete delete_all].freeze
+        PROTECTED_MODELS = %i[account accounts]
 
         def_node_matcher :dangerous_account_association?, <<~PATTERN
           (send nil? #association?
-            (sym :account)
+            (sym #protected_model?)
             (hash
               _
               (pair
@@ -44,6 +45,10 @@ module RuboCop
 
         def destructive?(symbol)
           DEPENDENT_DESCTRUCTIVES.include?(symbol)
+        end
+
+        def protected_model?(symbol)
+          PROTECTED_MODELS.include?(symbol)
         end
       end
     end
