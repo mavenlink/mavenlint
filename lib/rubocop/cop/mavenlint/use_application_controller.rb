@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 
 module RuboCop
@@ -16,9 +18,9 @@ module RuboCop
       #   end
       #
       class UseApplicationController < RuboCop::Cop::Cop
-        MSG = 'Controllers should subclass `ApplicationController`.'.freeze
-        SUPERCLASS = 'ApplicationController'.freeze
-        BASE_PATTERN = '(const (const nil? :ActionController) :Base)'.freeze
+        MSG = 'Controllers should subclass `ApplicationController`.'
+        SUPERCLASS = 'ApplicationController'
+        BASE_PATTERN = '(const (const nil? :ActionController) :Base)'
 
         include RuboCop::Cop::EnforceSuperclass
       end

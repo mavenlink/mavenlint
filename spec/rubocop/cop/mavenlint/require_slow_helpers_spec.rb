@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop/cop/mavenlint/require_slow_helpers'
 require 'spec_helper'
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop/cop/mavenlint/direct_factory_bot_invocation'
 require 'spec_helper'
 

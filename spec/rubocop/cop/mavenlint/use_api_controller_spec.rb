@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop/cop/mavenlint/use_api_controller'
 require 'spec_helper'
 

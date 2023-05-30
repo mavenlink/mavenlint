@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop/cop/mavenlint/no_dependent_destroy_account'
 require 'spec_helper'
 
@@ -7,9 +9,9 @@ RSpec.describe RuboCop::Cop::Mavenlint::NoDependentDestroyAccount do
 
   described_class::ASSOCIATIONS.each do |association|
     described_class::DEPENDENT_DESCTRUCTIVES.each do |destructive|
-      [:account, :accounts].each do |model|
+      %i[account accounts].each do |model|
         it "registers an offense when #{association} :account has dependent: :#{destructive} option" do
-          message = " Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. If you are sure the dependent action should be on this side of the association use dependent: :nullify See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent"
+          message = ' Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. If you are sure the dependent action should be on this side of the association use dependent: :nullify See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent'
           ruby_code = "#{association} :#{model}, inverse_of: :foo, dependent: :#{destructive}, autosave: true"
 
           message = message.rjust(ruby_code.length + message.length, '^')
@@ -28,7 +30,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::NoDependentDestroyAccount do
     end
   end
 
-  it 'protects class name Account from dependent: :destroy'do
+  it 'protects class name Account from dependent: :destroy' do
     expect_offense(<<~RUBY)
       belongs_to :invitee_account, dependent: :destroy, class_name: "Account"
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. If you are sure the dependent action should be on this side of the association use dependent: :nullify See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent
