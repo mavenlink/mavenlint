@@ -18,6 +18,7 @@ module RuboCop
 
 
         ASSOCIATIONS = %i(belongs_to has_many has_one has_and_belongs_to_many)
+        DEPENDENT_DESCTRUCTIVES = %i(destroy destroy_async delete delete_all)
 
         def_node_matcher :dangerous_account_association?, <<~PATTERN
           (send nil? #association?
@@ -26,7 +27,7 @@ module RuboCop
               _
               (pair
                 (sym :dependent)
-                (sym :destroy))
+                (sym #destructive?))
               _
             ))
         PATTERN
@@ -38,6 +39,10 @@ module RuboCop
 
         def association?(symbol)
           ASSOCIATIONS.include?(symbol)
+        end
+
+        def destructive?(symbol)
+          DEPENDENT_DESCTRUCTIVES.include?(symbol)
         end
       end
     end
