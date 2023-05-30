@@ -11,7 +11,7 @@ on:
       - '**.rb'
 
 jobs:
-  rubylint:
+  rspec:
     runs-on: ubuntu-latest
 
     env:
