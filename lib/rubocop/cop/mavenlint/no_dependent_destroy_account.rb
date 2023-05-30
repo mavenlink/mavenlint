@@ -35,22 +35,6 @@ module RuboCop
           return unless dangerous_account_association?(node)
           add_offense(node, message: MSG)
         end
-
-        private
-
-        def association?(node)
-          node.command?(:belongs_to)
-        end
-
-        def associating_account?(node)
-          node.first_argument.source == ":account"
-        end
-
-        def unsafe_options?(node)
-          node.arguments.any? do |arg|
-            arg.type == :hash
-          end
-        end
       end
     end
   end
