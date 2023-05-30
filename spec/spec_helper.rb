@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Require supporting files exposed for testing.
 require 'rubocop/rspec/support'
 
@@ -33,7 +35,7 @@ RSpec.configure do |config|
     # Use the documentation formatter for detailed output,
     # unless a formatter has already been configured
     # (e.g. via a command-line flag).
-    config.default_formatter = "doc"
+    config.default_formatter = 'doc'
   end
 
   # Run specs in random order to surface order dependencies. If you find an

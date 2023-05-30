@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 
 module RuboCop
   module Cop
     module Mavenlint
+      # Enforces that foreign key columns are bigint type
       class BigIntForMigrationKeys < RuboCop::Cop::Cop
-        FK_VIOLATION_MSG = "Foreign keys must be of type BIGINT".freeze
-        PK_VIOLATION_MSG = "Primary keys must be of type BIGINT".freeze
+        FK_VIOLATION_MSG = 'Foreign keys must be of type BIGINT'
+        PK_VIOLATION_MSG = 'Primary keys must be of type BIGINT'
 
         def_node_matcher :change_column, <<~PATTERN
           (send nil? :change_column ...)
@@ -39,7 +42,7 @@ module RuboCop
           end
         end
 
-        def is_integer_column(node, column_type_offset)
+        def integer_column?(node, column_type_offset)
           get_column_type(node, column_type_offset) == :integer
         end
 
@@ -63,14 +66,15 @@ module RuboCop
           end
         end
 
-        def is_foreign_id_column(node, column_name_offset)
+        def foreign_id_column?(node, column_name_offset)
           column_name = get_column_name(node, column_name_offset)
           return false unless column_name
+
           column_name.match(/.*_id/)
         end
 
-        def is_primary_id_column(node, column_name_offset)
-          get_column_name(node, column_name_offset) == "id"
+        def primary_id_column?(node, column_name_offset)
+          get_column_name(node, column_name_offset) == 'id'
         end
 
         def check_column_migration(node)
@@ -79,9 +83,9 @@ module RuboCop
           column_type_offset = 4
           column_name_offset = 3
 
-          if is_foreign_id_column(node, column_name_offset) && is_integer_column(node, column_type_offset)
+          if foreign_id_column?(node, column_name_offset) && integer_column?(node, column_type_offset)
             add_offense(node, message: FK_VIOLATION_MSG)
-          elsif is_primary_id_column(node, column_name_offset) && is_integer_column(node, column_type_offset)
+          elsif primary_id_column?(node, column_name_offset) && integer_column?(node, column_type_offset)
             add_offense(node, message: PK_VIOLATION_MSG)
           end
         end
@@ -92,41 +96,33 @@ module RuboCop
           column_type_offset = 1
           column_name_offset = 2
 
-          def get_column_definitions(node)
-            block_node = node.block_node
-            if block_node.children[2].is_a? RuboCop::AST::SendNode
-              return [block_node.children[2].children]
-            elsif block_node.is_a? RuboCop::AST::Node
-              return block_node.children[2].children
-            end
-            []
-          end
-
-          def get_table_id_type(node)
-            begin
-              id_type = node.children[3].children[0].children
-              if id_type[0].children[0] == :id
-                return id_type[1].children[0]
-              end
-            rescue
-            end
-            nil
-          end
-
           table_id_type = get_table_id_type(node)
-          unless table_id_type.nil?
-            if table_id_type == :integer
-              add_offense(node, message: PK_VIOLATION_MSG)
-            end
-          end
+          add_offense(node, message: PK_VIOLATION_MSG) if !table_id_type.nil? && (table_id_type == :integer)
 
           get_column_definitions(node).each do |column|
-            if is_foreign_id_column(column, column_name_offset) && is_integer_column(column, column_type_offset)
+            if foreign_id_column?(column, column_name_offset) && integer_column?(column, column_type_offset)
               add_offense(column, message: FK_VIOLATION_MSG)
-            elsif is_primary_id_column(column, column_name_offset) && is_integer_column(column, column_type_offset)
+            elsif primary_id_column?(column, column_name_offset) && integer_column?(column, column_type_offset)
               add_offense(column, message: PK_VIOLATION_MSG)
             end
           end
+        end
+
+        private
+
+        def get_column_definitions(node)
+          block_node = node.block_node
+          return [block_node.children[2].children] if block_node.children[2].is_a? RuboCop::AST::SendNode
+          return block_node.children[2].children if block_node.is_a? RuboCop::AST::Node
+
+          []
+        end
+
+        def get_table_id_type(node)
+          id_type = node.children[3].children[0].children
+          return id_type[1].children[0] if id_type[0].children[0] == :id
+        rescue StandardError
+          nil
         end
       end
     end

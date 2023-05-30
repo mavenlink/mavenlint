@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop/cop/mavenlint/bigint_for_migration_keys'
 require 'spec_helper'
 
@@ -146,7 +148,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
             create_table :the_network_ego_records do |t|
               t.timestamps
             end
-        
+
             create_table :the_network_ego_memberships do |t|
               t.timestamps
               t.bigint :user_id, :required => true, :nullable => false, :foreign_key => true, :unique => true

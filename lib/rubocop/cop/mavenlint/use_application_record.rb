@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 
 module RuboCop
@@ -21,9 +23,9 @@ module RuboCop
       # @see https://github.com/bbatsov/rubocop/blob/10a7041d23bcd579821b378dd351aeead7c3f082/lib/rubocop/cop/rails/application_record.rb
       #
       class UseApplicationRecord < RuboCop::Cop::Cop
-        MSG = 'Models should subclass `ApplicationRecord`.'.freeze
-        SUPERCLASS = 'ApplicationRecord'.freeze
-        BASE_PATTERN = '(const (const nil? :ActiveRecord) :Base)'.freeze
+        MSG = 'Models should subclass `ApplicationRecord`.'
+        SUPERCLASS = 'ApplicationRecord'
+        BASE_PATTERN = '(const (const nil? :ActiveRecord) :Base)'
 
         include RuboCop::Cop::EnforceSuperclass
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 
 module RuboCop
@@ -15,14 +17,12 @@ module RuboCop
       # or updated through a publicly accessible endpoint, because the associated model isn't
       # necessarily loaded and ran through security checks.
       class UnsafeMassAssignment < RuboCop::Cop::Cop
-        MSG = "Do not allow mass-assignment of foreign key columns. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#unsafemassassignment".freeze
+        MSG = 'Do not allow mass-assignment of foreign key columns. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#unsafemassassignment'
 
         def on_send(node)
           return unless node.command?(:attr_accessible)
 
-          if unsafe_names?(node)
-            add_offense(node, message: MSG)
-          end
+          add_offense(node, message: MSG) if unsafe_names?(node)
         end
 
         private

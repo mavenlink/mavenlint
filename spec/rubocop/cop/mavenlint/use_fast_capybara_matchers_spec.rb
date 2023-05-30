@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop/cop/mavenlint/use_fast_capybara_matchers'
 require 'spec_helper'
 
@@ -18,7 +20,6 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseFastCapybaraMatchers do
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use a `to have_no_*` selector. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#usefastcapybaramatchers
     RUBY
   end
-
 
   it 'registers an offense when "to_not have_*" is used' do
     expect_offense(<<~RUBY)
