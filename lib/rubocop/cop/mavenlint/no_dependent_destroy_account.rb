@@ -27,8 +27,8 @@ module RuboCop
             (sym #protected_model?)
             (hash
               <(pair
-                (sym :dependent)#{' '}
-                (sym #destructive?))#{' '}
+                (sym :dependent)
+                (sym #destructive?))
               ...>
             ))
         PATTERN
