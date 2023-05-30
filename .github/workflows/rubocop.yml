@@ -1,4 +1,4 @@
-name: Rspec
+name: Rubocop
 
 on:
   push:
@@ -22,5 +22,5 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: Run Rspec
+      - name: Run Rubocop
         run: bundle exec rubocop
