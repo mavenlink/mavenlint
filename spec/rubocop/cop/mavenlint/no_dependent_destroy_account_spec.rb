@@ -18,5 +18,15 @@ RSpec.describe RuboCop::Cop::Mavenlint::NoDependentDestroyAccount do
         RUBY
       end
     end
+
+    described_class::ASSOCIATIONS.each do |association|
+      described_class::DEPENDENT_DESCTRUCTIVES.each do |destructive|
+        it "registers an offense when #{association} :account has dependent: :#{destructive} option" do
+          ruby_code = "#{association} :other_model, inverse_of: :foo, dependent: :#{destructive}, autosave: true"
+
+          expect_no_offenses(ruby_code)
+        end
+      end
+    end
   end
 end
