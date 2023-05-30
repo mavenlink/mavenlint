@@ -22,20 +22,35 @@ module RuboCop
         DEPENDENT_DESCTRUCTIVES = %i[destroy destroy_async delete delete_all].freeze
         PROTECTED_MODELS = %i[account accounts]
 
-        def_node_matcher :dangerous_account_association?, <<~PATTERN
+        def_node_matcher :dangerous_direct_account_association?, <<~PATTERN
           (send nil? #association?
             (sym #protected_model?)
             (hash
-              _
-              (pair
+              <(pair
+                (sym :dependent) 
+                (sym #destructive?)) 
+              ...>
+            ))
+        PATTERN
+
+        def_node_matcher :dangerous_indirect_account_association?, <<~PATTERN
+          (send nil? #association?
+            (sym _)
+            (hash
+              <(pair
                 (sym :dependent)
                 (sym #destructive?))
-              _
+              (pair
+                (sym :class_name)
+                (str "Account"))
+              ...>
             ))
         PATTERN
 
         def on_send(node)
-          return unless dangerous_account_association?(node)
+          has_direct_danger = dangerous_direct_account_association?(node)
+          has_indirect_danger = dangerous_indirect_account_association?(node)
+          return unless has_direct_danger || has_indirect_danger
           add_offense(node, message: MSG)
         end
 
