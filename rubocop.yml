@@ -95,3 +95,9 @@ Mavenlint/NoDependentDestroyAccount:
   Include:
     - app/**/models/**/*.rb
     - lib/**/models/**/*.rb
+
+# Only check for associations in models
+Mavenlint/BelongsToDependentOption:
+  Include:
+    - app/**/models/**/*.rb
+    - lib/**/models/**/*.rb
