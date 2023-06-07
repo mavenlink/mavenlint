@@ -20,6 +20,7 @@ module RuboCop
 
         ASSOCIATIONS = %i[belongs_to has_many has_one has_and_belongs_to_many].freeze
         PROTECTED_MODELS = %i[account accounts].freeze
+        PROTECTED_CLASSES = %w[Account ::Account].freeze
 
         def_node_matcher :dangerous_direct_account_association?, <<~PATTERN
           (send nil? #association?
@@ -41,7 +42,7 @@ module RuboCop
                 (sym ...))
               (pair
                 (sym :class_name)
-                (str "Account"))
+                (str #account_class?))
               ...>
             ))
         PATTERN
@@ -60,6 +61,10 @@ module RuboCop
 
         def protected_model?(symbol)
           PROTECTED_MODELS.include?(symbol)
+        end
+
+        def account_class?(str)
+          PROTECTED_CLASSES.include?(str)
         end
       end
     end
