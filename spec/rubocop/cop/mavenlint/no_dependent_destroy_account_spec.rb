@@ -36,6 +36,11 @@ RSpec.describe RuboCop::Cop::Mavenlint::NoDependentDestroyAccount do
       belongs_to :invitee_account, dependent: :destroy, class_name: "Account"
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent
     RUBY
+
+    expect_offense(<<~RUBY)
+      belongs_to :invitee_account, dependent: :destroy, class_name: "::Account"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent
+    RUBY
   end
 
   it 'handles various args' do
