@@ -7,10 +7,9 @@ RSpec.describe RuboCop::Cop::Mavenlint::NoDependentDestroyAccount do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 
-  DEPENDENT_DESCTRUCTIVES = %i[destroy destroy_async delete delete_all nullify].freeze
-
   described_class::ASSOCIATIONS.each do |association|
-    DEPENDENT_DESCTRUCTIVES.each do |destructive|
+    dependent_destructives = %i[destroy destroy_async delete delete_all nullify]
+    dependent_destructives.each do |destructive|
       %i[account accounts].each do |model|
         it "registers an offense when #{association} :account has dependent: :#{destructive} option" do
           message = ' Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent'
