@@ -120,7 +120,7 @@ module RuboCop
 
         def get_table_id_type(node)
           id_type = node.children[3].children[0].children
-          return id_type[1].children[0] if id_type[0].children[0] == :id
+          id_type[1].children[0] if id_type[0].children[0] == :id
         rescue StandardError
           nil
         end

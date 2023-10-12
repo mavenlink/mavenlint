@@ -10,7 +10,7 @@ Lint/DuplicateMethods:
   Enabled: true
 
 # Enforce not duplicating hash keys.
-Lint/DuplicatedKey:
+Lint/DuplicateHashKey:
   Enabled: true
 
 # Ensure that we don't use `private` and `protected` on class methods, which doesn't work.
