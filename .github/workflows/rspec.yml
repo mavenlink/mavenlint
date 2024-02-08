@@ -23,7 +23,6 @@ jobs:
         env:
           RAILS_ENV: test
         run: |
-          gem install bundler
           bundle install
 
       - name: Run tests
@@ -52,7 +51,6 @@ jobs:
         env:
           RAILS_ENV: test
         run: |
-          gem install bundler
           bundle install
 
       - name: Run Rubocop
