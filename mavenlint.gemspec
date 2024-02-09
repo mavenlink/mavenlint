@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'mavenlint'
-  s.version     = '1.6.0'
+  s.version     = '1.7.0'
   s.licenses    = ['MIT']
   s.summary     = 'Mavenlink Rubocop config'
   s.authors     = ['Mavenlink']
@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '3.12'
   s.add_development_dependency 'rubocop', '1.31'
 
-  s.required_ruby_version = '>= 2.7.5'
+  s.required_ruby_version = '~> 3.0'
 end

@@ -23,5 +23,8 @@ npm-debug.log
 # Byebug command history file
 .byebug_history
 
-Gemfile.lock
 *.gem
+
+.ruby-gemset
+.ruby-version
+.tool-versions
