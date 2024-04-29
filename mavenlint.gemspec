@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.files       = Dir['rubocop.yml', 'lib/**/*.rb']
   s.homepage    = 'https://github.com/mavenlink/mavenlint'
 
-  s.add_development_dependency 'rake', '12'
+  s.add_development_dependency 'rake', '12.3.3'
   s.add_development_dependency 'rspec', '3.12'
   s.add_development_dependency 'rubocop', '1.31'
 
