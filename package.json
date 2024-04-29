@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "deduplicate": "yarn-deduplicate && yarn",
     "publish-canary": "lerna publish --canary",
     "publish-packages": "lerna publish",
     "test": "jest"
@@ -15,6 +16,7 @@
     "babel-jest": "^23.6.0",
     "eslint": "^4.14.0",
     "jest": "^23.6.0",
-    "lerna": "^3.6.0"
+    "lerna": "^3.6.0",
+    "yarn-deduplicate": "^6.0.2"
   }
 }
