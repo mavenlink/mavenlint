@@ -1241,10 +1241,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lerna/create@8.1.3":
-  version "8.1.3"
-  resolved "https://registry.yarnpkg.com/@lerna/create/-/create-8.1.3.tgz#6cbdcc762fe5eb5dde24b34761c7bb61940fcb2a"
-  integrity sha512-JFvIYrlvR8Txa8h7VZx8VIQDltukEKOKaZL/muGO7Q/5aE2vjOKHsD/jkWYe/2uFy1xv37ubdx17O1UXQNadPg==
+"@lerna/create@8.1.4":
+  version "8.1.4"
+  resolved "https://registry.yarnpkg.com/@lerna/create/-/create-8.1.4.tgz#4cbf2b81e718b58898b445125f701985925f40ba"
+  integrity sha512-lcfDXrDIESnpATGwIMCy0b/PcIVbha8q0d1WbXixFox+m2eno5MNHoteddUjhFY0CN1xM2259a8TyznCoY8GHw==
   dependencies:
     "@npmcli/run-script" "7.0.2"
     "@nx/devkit" ">=17.1.2 < 20"
@@ -4541,12 +4541,12 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-lerna@^8.1.3:
-  version "8.1.3"
-  resolved "https://registry.yarnpkg.com/lerna/-/lerna-8.1.3.tgz#9168804c99fbba49083e1f62de65a0ffefd6df22"
-  integrity sha512-Dg/r1dGnRCXKsOUC3lol7o6ggYTA6WWiPQzZJNKqyygn4fzYGuA3Dro2d5677pajaqFnFA72mdCjzSyF16Vi2Q==
+lerna@^8.1.4:
+  version "8.1.4"
+  resolved "https://registry.yarnpkg.com/lerna/-/lerna-8.1.4.tgz#ee94b5351e6864268da17828b5ff0675c33efad8"
+  integrity sha512-vmzTvNKSY8U1sf8OLKiFWUCGpOXasHlwMj15y2xmaQfIaUsvpsdyvM8AghBm1NB/P+duyWG6vfmyotQlAf+gVg==
   dependencies:
-    "@lerna/create" "8.1.3"
+    "@lerna/create" "8.1.4"
     "@npmcli/run-script" "7.0.2"
     "@nx/devkit" ">=17.1.2 < 20"
     "@octokit/plugin-enterprise-rest" "6.0.1"
