@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-mavenlint-react",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Mavenlink React ESLint config",
   "main": "index.js",
   "repository": "https://github.com/mavenlink/mavenlint.git",
@@ -9,9 +9,9 @@
     "eslint": ">=8.0.0"
   },
   "dependencies": {
-    "eslint-config-mavenlint": "^5.0.0",
+    "eslint-config-mavenlint": "^5.0.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-mavenlint": "^0.5.0",
+    "eslint-plugin-mavenlint": "^0.5.1",
     "eslint-plugin-react": "^7.34.2"
   }
 }

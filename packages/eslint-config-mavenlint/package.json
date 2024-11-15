@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-mavenlint",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Mavenlink ESLint config",
   "main": "index.js",
   "repository": "https://github.com/mavenlink/mavenlint.git",
