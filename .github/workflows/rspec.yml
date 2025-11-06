@@ -12,7 +12,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0.6' # Not needed with a .ruby-version, .tool-versions or mise.toml
+          ruby-version: '3.1' # Not needed with a .ruby-version, .tool-versions or mise.toml
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Run tests
@@ -30,7 +30,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0.6' # Not needed with a .ruby-version, .tool-versions or mise.toml
+          ruby-version: '3.1' # Not needed with a .ruby-version, .tool-versions or mise.toml
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Run Rubocop
