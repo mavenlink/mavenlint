@@ -10,7 +10,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BelongsToDependentOption do
   it 'registers an offense when belongs_to is invoked with the dependent option' do
     expect_offense(<<~RUBY)
       belongs_to :workspace, inverse_of: :foo, dependent: :destroy_all, autosave: true
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not use the dependent option with belongs_to associations. The option should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BelongsToDependentOption: Do not use the dependent option with belongs_to associations. The option should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent
     RUBY
   end
 

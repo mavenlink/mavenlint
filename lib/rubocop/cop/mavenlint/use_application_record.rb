@@ -22,7 +22,7 @@ module RuboCop
       # remove this custom cop and enable the built-in one.
       # @see https://github.com/bbatsov/rubocop/blob/10a7041d23bcd579821b378dd351aeead7c3f082/lib/rubocop/cop/rails/application_record.rb
       #
-      class UseApplicationRecord < RuboCop::Cop::Cop
+      class UseApplicationRecord < RuboCop::Cop::Base
         MSG = 'Models should subclass `ApplicationRecord`.'
         SUPERCLASS = 'ApplicationRecord'
         BASE_PATTERN = '(const (const nil? :ActiveRecord) :Base)'

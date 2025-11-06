@@ -10,14 +10,14 @@ RSpec.describe RuboCop::Cop::Mavenlint::RequireSlowHelpers do
   it 'registers an offense when require "spec_helper" is used' do
     expect_offense(<<~RUBY)
       require "spec_helper"
-      ^^^^^^^^^^^^^^^^^^^^^ Specs in the unit directory should not require rails_helper or spec_helper
+      ^^^^^^^^^^^^^^^^^^^^^ Mavenlint/RequireSlowHelpers: Specs in the unit directory should not require rails_helper or spec_helper
     RUBY
   end
 
   it 'registers an offense when require "rails_helper" is used' do
     expect_offense(<<~RUBY)
       require "rails_helper"
-      ^^^^^^^^^^^^^^^^^^^^^^ Specs in the unit directory should not require rails_helper or spec_helper
+      ^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/RequireSlowHelpers: Specs in the unit directory should not require rails_helper or spec_helper
     RUBY
   end
 end

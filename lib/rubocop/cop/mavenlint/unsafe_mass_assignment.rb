@@ -16,7 +16,7 @@ module RuboCop
       # Allowing mass assignment of a foreign key column is dangerous for models that are created
       # or updated through a publicly accessible endpoint, because the associated model isn't
       # necessarily loaded and ran through security checks.
-      class UnsafeMassAssignment < RuboCop::Cop::Cop
+      class UnsafeMassAssignment < RuboCop::Cop::Base
         MSG = 'Do not allow mass-assignment of foreign key columns. See https://github.com/mavenlink/welcome/wiki/Lint-Errors#unsafemassassignment'
 
         def on_send(node)

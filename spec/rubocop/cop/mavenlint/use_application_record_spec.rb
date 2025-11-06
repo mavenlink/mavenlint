@@ -10,7 +10,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseApplicationRecord do
   it 'registers an offense a model directly inherits from ActiveRecord::Base' do
     expect_offense(<<~RUBY)
       class User < ActiveRecord::Base; end
-                   ^^^^^^^^^^^^^^^^^^ Models should subclass `ApplicationRecord`.
+                   ^^^^^^^^^^^^^^^^^^ Mavenlint/UseApplicationRecord: Models should subclass `ApplicationRecord`.
     RUBY
   end
 

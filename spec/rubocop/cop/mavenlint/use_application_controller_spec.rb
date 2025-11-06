@@ -10,7 +10,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseApplicationController do
   it 'registers an offense when a controller directly inherits from ActionController::Base' do
     expect_offense(<<~RUBY)
       class MyController < ActionController::Base; end
-                           ^^^^^^^^^^^^^^^^^^^^^^ Controllers should subclass `ApplicationController`.
+                           ^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/UseApplicationController: Controllers should subclass `ApplicationController`.
     RUBY
   end
 
