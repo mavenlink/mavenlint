@@ -17,7 +17,7 @@ module RuboCop
       #   class SomeController < ApplicationController
       #   end
       #
-      class UseApplicationController < RuboCop::Cop::Cop
+      class UseApplicationController < RuboCop::Cop::Base
         MSG = 'Controllers should subclass `ApplicationController`.'
         SUPERCLASS = 'ApplicationController'
         BASE_PATTERN = '(const (const nil? :ActionController) :Base)'

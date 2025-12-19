@@ -6,17 +6,20 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    ast (2.4.2)
+    ast (2.4.3)
     diff-lcs (1.5.0)
-    parallel (1.24.0)
-    parser (3.3.0.5)
+    json (2.15.2)
+    language_server-protocol (3.17.0.5)
+    lint_roller (1.1.0)
+    parallel (1.27.0)
+    parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
-    racc (1.7.3)
+    prism (1.6.0)
+    racc (1.8.1)
     rainbow (3.1.1)
     rake (12.3.3)
-    regexp_parser (2.9.0)
-    rexml (3.3.9)
+    regexp_parser (2.11.3)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
@@ -30,19 +33,24 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.1)
-    rubocop (1.31.0)
+    rubocop (1.81.0)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
       parallel (~> 1.10)
-      parser (>= 3.1.0.0)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.8, < 3.0)
-      rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.18.0, < 2.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.47.1, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.30.0)
-      parser (>= 3.2.1.0)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.47.1)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
     ruby-progressbar (1.13.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (3.2.0)
+      unicode-emoji (~> 4.1)
+    unicode-emoji (4.1.0)
 
 PLATFORMS
   ruby
@@ -51,7 +59,7 @@ DEPENDENCIES
   mavenlint!
   rake (= 12.3.3)
   rspec (= 3.12)
-  rubocop (= 1.31)
+  rubocop (= 1.81)
 
 BUNDLED WITH
-   2.2.33
+   2.6.9

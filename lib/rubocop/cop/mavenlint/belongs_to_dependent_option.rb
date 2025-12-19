@@ -14,7 +14,7 @@ module RuboCop
       #   end
       #
       # It is advised to put the dependent option on the other side of the association
-      class BelongsToDependentOption < RuboCop::Cop::Cop
+      class BelongsToDependentOption < RuboCop::Cop::Base
         MSG = 'Do not use the dependent option with belongs_to associations. The option should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent'
 
         def_node_matcher :bad_belongs_to?, <<~PATTERN

@@ -6,7 +6,7 @@ module RuboCop
   module Cop
     module Mavenlint
       # Prevents use of slow capybara matchers
-      class RequireSlowHelpers < RuboCop::Cop::Cop
+      class RequireSlowHelpers < RuboCop::Cop::Base
         MSG = 'Specs in the unit directory should not require rails_helper or spec_helper'
         SLOW_HELPERS = %w[spec_helper rails_helper].freeze
 

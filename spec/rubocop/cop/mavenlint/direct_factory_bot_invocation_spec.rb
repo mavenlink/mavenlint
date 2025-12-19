@@ -10,14 +10,14 @@ RSpec.describe RuboCop::Cop::Mavenlint::DirectFactoryBotInvocation do
   it 'registers an offense when FactoryBot.create is used' do
     expect_offense(<<~RUBY)
       FactoryBot.create(:maven_participation, foo: 'bar')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Direct calls to FactoryBot should be replaced with Mavenlink::ModelFactories calls
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/DirectFactoryBotInvocation: Direct calls to FactoryBot should be replaced with Mavenlink::ModelFactories calls
     RUBY
   end
 
   it 'registers an offense when FactoryBot.build is used' do
     expect_offense(<<~RUBY)
       FactoryBot.build(:maven_participation, foo: 'bar')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Direct calls to FactoryBot should be replaced with Mavenlink::ModelFactories calls
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/DirectFactoryBotInvocation: Direct calls to FactoryBot should be replaced with Mavenlink::ModelFactories calls
     RUBY
   end
 end
