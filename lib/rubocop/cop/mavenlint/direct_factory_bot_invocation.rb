@@ -7,7 +7,7 @@ module RuboCop
     module Mavenlint
       # Prevents invocation of factory bot directly and instead
       # suggests user use the `create.a(:model)` pattern
-      class DirectFactoryBotInvocation < RuboCop::Cop::Cop
+      class DirectFactoryBotInvocation < RuboCop::Cop::Base
         MSG = 'Direct calls to FactoryBot should be replaced with Mavenlink::ModelFactories calls'
         FACTORY_BOT_METHODS = %i[create build].freeze
 

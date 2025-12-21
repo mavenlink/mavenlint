@@ -17,7 +17,7 @@ module RuboCop
       #   class SomeApiController < ApiController
       #   end
       #
-      class UseApiController < RuboCop::Cop::Cop
+      class UseApiController < RuboCop::Cop::Base
         MSG = 'Api Controllers should subclass `ApiController`.'
         SUPERCLASS = 'ApiController'
         BASE_PATTERN = '(const nil? :ApplicationController)'

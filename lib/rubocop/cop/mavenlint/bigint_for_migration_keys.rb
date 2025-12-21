@@ -6,7 +6,7 @@ module RuboCop
   module Cop
     module Mavenlint
       # Enforces that foreign key columns are bigint type
-      class BigIntForMigrationKeys < RuboCop::Cop::Cop
+      class BigIntForMigrationKeys < RuboCop::Cop::Base
         FK_VIOLATION_MSG = 'Foreign keys must be of type BIGINT'
         PK_VIOLATION_MSG = 'Primary keys must be of type BIGINT'
 

@@ -15,7 +15,7 @@ module RuboCop
       #
       # Allowing deletion of account through active record associations can cause cascading data deletions. Account
       # is a root object and shouldn't be deleted via active record associations
-      class NoDependentDestroyAccount < RuboCop::Cop::Cop
+      class NoDependentDestroyAccount < RuboCop::Cop::Base
         MSG = 'Do not add an association to account with dependent destroy. The destroy should go on the other side of the association. See https://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-dependent'
 
         ASSOCIATIONS = %i[belongs_to has_many has_one has_and_belongs_to_many].freeze

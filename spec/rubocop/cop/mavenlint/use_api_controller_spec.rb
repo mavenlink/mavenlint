@@ -10,7 +10,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::UseApiController do
   it 'registers an offense when an api controller directly inherits from ApplicationController' do
     expect_offense(<<~RUBY)
       class MyController < ApplicationController; end
-                           ^^^^^^^^^^^^^^^^^^^^^ Api Controllers should subclass `ApiController`.
+                           ^^^^^^^^^^^^^^^^^^^^^ Mavenlint/UseApiController: Api Controllers should subclass `ApiController`.
     RUBY
   end
 

@@ -13,7 +13,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
         expect_offense(<<~RUBY)
           def up
             change_column :preferences, :subject_id, :integer
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Foreign keys must be of type BIGINT
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BigIntForMigrationKeys: Foreign keys must be of type BIGINT
           end
         RUBY
       end
@@ -32,7 +32,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
         expect_offense(<<~RUBY)
           def up
             change_column :preferences, :id, :integer
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Primary keys must be of type BIGINT
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BigIntForMigrationKeys: Primary keys must be of type BIGINT
           end
         RUBY
       end
@@ -53,7 +53,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
         expect_offense(<<~RUBY)
           def up
             add_column :preferences, :subject_id, :integer
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Foreign keys must be of type BIGINT
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BigIntForMigrationKeys: Foreign keys must be of type BIGINT
           end
         RUBY
       end
@@ -72,7 +72,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
         expect_offense(<<~RUBY)
           def up
             add_column :preferences, :id, :integer
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Primary keys must be of type BIGINT
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BigIntForMigrationKeys: Primary keys must be of type BIGINT
           end
         RUBY
       end
@@ -92,7 +92,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
       it 'registers an offense when table is created with integer pk' do
         expect_offense(<<~RUBY)
           create_table "access_control_analytics_reports_claims", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Primary keys must be of type BIGINT
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BigIntForMigrationKeys: Primary keys must be of type BIGINT
             t.string "report_name", null: false
           end
         RUBY
@@ -105,7 +105,7 @@ RSpec.describe RuboCop::Cop::Mavenlint::BigIntForMigrationKeys do
           def change
             create_table :new_account_invitations do |t|
               t.integer :inviter_id, null: false
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Foreign keys must be of type BIGINT
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Mavenlint/BigIntForMigrationKeys: Foreign keys must be of type BIGINT
               t.string :email_address, null: false
               t.string :token, null: false, :limit => 36
               t.timestamps

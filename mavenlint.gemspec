@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rake', '12.3.3'
   s.add_development_dependency 'rspec', '3.12'
-  s.add_development_dependency 'rubocop', '1.31'
+  s.add_development_dependency 'rubocop', '1.81'
 
   s.required_ruby_version = '~> 3.0'
 end
